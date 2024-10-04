@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Slider</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Set body to use the full viewport */
+        
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        /* Video Section */
+        
+        section {
+            width: 70vw;
+            /* 70% of the viewport width */
+            text-align: center;
+        }
+        /* Video Style */
+        
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        /* Navigation thumbnails */
+        
+        .navigation {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .navigation li {
+            margin: 0 10px;
+        }
+        
+        .navigation img {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+        
+        .navigation img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!-- Video Slider -->
+        <video id="slider" autoplay loop muted controls>
+            <source src="./videos/1.mp4" type="video/mp4" id="videoSource">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Thumbnails for Video Navigation -->
+        <ul class="navigation">
+            <li><img onclick="videoUrl('./video1.mp4')" src="./image1.jpg" alt="Thumbnail 1"></li>
+            <li><img onclick="videoUrl('./video2.mp4')" src="./image2.jpg" alt="Thumbnail 2"></li>
+            <li><img onclick="videoUrl('./video3.mp4')" src="./image3.jpg" alt="Thumbnail 3"></li>
+        </ul>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
